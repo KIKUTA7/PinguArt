@@ -11,7 +11,7 @@ int i=0, x;
 char a[][] = new char [8][8];
 while (i<8)
 {
-    x=readInt();
+    x=readInt("Please enter a Pingu Art number:");
     if(x<10000000)
     {
         int k=0,m=7;
