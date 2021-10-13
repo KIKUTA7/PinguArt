@@ -8,7 +8,7 @@ public class PinguArt {
 
 
 int i=0, x;
-char a[][] = new char [8][8];
+int a[][] = new int [8][8];
 while (i<8)
 {
     x=readInt("Please enter a Pingu Art number:");
@@ -17,13 +17,13 @@ while (i<8)
         int k=0,m=7;
         while (x>0)
         {
-            a[i][m]= (char) (x%10+48);
+            a[i][m]=x%10;
         k++;
         x=x/10;
         m--;}
         while (k<8)
         {
-            a[i][m]='0';
+            a[i][m]=0;
             m--;
             k++;
         }
@@ -31,7 +31,7 @@ while (i<8)
     else {
         int m=7;
         while (x>0) {
-            a[i][m] = (char) (x % 10 + 48);
+            a[i][m] =x % 10;
             m--;
             x = x / 10;
         }
@@ -49,9 +49,9 @@ while (i<4)
   while (k>-1)
   {
 
-       if(a[l][k]=='0') {System.out.print(' ');}
-       else if(a[l][k]=='1') System.out.print('-');
-      else if(a[l][k]=='2') System.out.print('~');
+       if(a[l][k]==0) {System.out.print(' ');}
+       else if(a[l][k]==1) System.out.print('-');
+      else if(a[l][k]==2) System.out.print('~');
       else System.out.print('P');
 
       if(k==0) l++;
@@ -60,9 +60,9 @@ while (i<4)
   k=7;
   while (k> -1)
   {
-      if(a[l][k]=='0') System.out.print(' ');
-      else if(a[l][k]=='1') System.out.print('-');
-      else if(a[l][k]=='2') System.out.print('~');
+      if(a[l][k]==0) System.out.print(' ');
+      else if(a[l][k]==1) System.out.print('-');
+      else if(a[l][k]==2) System.out.print('~');
       else System.out.print('P');
 
       if(k==0) l++;
