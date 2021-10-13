@@ -6,72 +6,72 @@ public class PinguArt {
 
 	public static void main(String[] args) {
 
-
-int i=0, x;
-int a[][] = new int [8][8];
-while (i<8)
-{
-    x=readInt("Please enter a Pingu Art number:");
-    if(x<10000000)
-    {
-        int k=0,m=7;
-        while (x>0)
+        int i=0, num;
+        int art[][] = new int [8][8];
+        while (i<8)
         {
-            a[i][m]=x%10;
-        k++;
-        x=x/10;
-        m--;}
-        while (k<8)
+            num=readInt("Please enter a Pingu Art number:");
+            if(num<10000000)
+            {
+                int DigitNum=0,index=7;
+                while (num>0)
+                {
+                    art[i][index]=num%10;
+                    DigitNum++;
+                    num=num/10;
+                    index--;}
+                while (DigitNum<8)
+                {
+                    art[i][index]=0;
+                    index--;
+                    DigitNum++;
+                }
+            }
+            else {
+                int index=7;
+                while (num>0) {
+                    art[i][index] =num % 10;
+                    index--;
+                    num = num / 10;
+                }
+
+            }
+            i++;
+        }
+        i=0;
+        write("+---[PinguArt]---+");
+        int ArtNumber=0;
+        while (i<4)
         {
-            a[i][m]=0;
-            m--;
-            k++;
+            System.out.print("|");
+            int SymbolIndex=7;
+            while (SymbolIndex>-1)
+            {
+
+                if(art[ArtNumber][SymbolIndex]==0) {System.out.print(' ');}
+                else if(art[ArtNumber][SymbolIndex]==1) System.out.print('-');
+                else if(art[ArtNumber][SymbolIndex]==2) System.out.print('~');
+                else System.out.print('P');
+
+                if(SymbolIndex==0) ArtNumber++;
+                SymbolIndex--;
+            }
+            SymbolIndex=7;
+            while (SymbolIndex> -1)
+            {
+                if(art[ArtNumber][SymbolIndex]==0) System.out.print(' ');
+                else if(art[ArtNumber][SymbolIndex]==1) System.out.print('-');
+                else if(art[ArtNumber][SymbolIndex]==2) System.out.print('~');
+                else System.out.print('P');
+
+                if(SymbolIndex==0) ArtNumber++;
+                SymbolIndex--;
+            }
+            write("|");
+            i++;
         }
-    }
-    else {
-        int m=7;
-        while (x>0) {
-            a[i][m] =x % 10;
-            m--;
-            x = x / 10;
-        }
+        write("+----------------+");
 
-    }
-i++;
-}
-i=0;
-write("+---[PinguArt]---+");
-int l=0;
-while (i<4)
-{
-  System.out.print("|");
-  int k=7;
-  while (k>-1)
-  {
-
-       if(a[l][k]==0) {System.out.print(' ');}
-       else if(a[l][k]==1) System.out.print('-');
-      else if(a[l][k]==2) System.out.print('~');
-      else System.out.print('P');
-
-      if(k==0) l++;
-      k--;
-  }
-  k=7;
-  while (k> -1)
-  {
-      if(a[l][k]==0) System.out.print(' ');
-      else if(a[l][k]==1) System.out.print('-');
-      else if(a[l][k]==2) System.out.print('~');
-      else System.out.print('P');
-
-      if(k==0) l++;
-      k--;
-  }
-  write("|");
-  i++;
-}
-write("+----------------+");
 
 
 
